@@ -34,3 +34,5 @@ scripts": {
    
   },
 
+# Criando Component dentro da pas app
+ng g c listar-usuario
