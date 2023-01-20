@@ -1,0 +1,36 @@
+# Intalacao do Ancular CLI Angular -> Setup
+npm install -g @angular/cli
+
+# Criando um Projeto
+ng new CrusoNgRx
+
+# Subindo a aplicacao
+npm start
+ng sever --open
+
+
+# instalacao Bootstrap
+npm install bootstrap
+
+Anuglar.json 
+"styles": [
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
+
+# instalacao do concurrently
+npm install concurrently
+
+# instalacao do json-server
+npm install json-server
+
+# Ajustando Front para subir Api Junto
+scripts": {
+   
+    "start": " concurrently \"ng serve\" \"json-server --watch db.json\"",
+   
+  },
+
