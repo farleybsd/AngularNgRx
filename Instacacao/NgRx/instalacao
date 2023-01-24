@@ -1,0 +1,8 @@
+# Instalacao
+
+1. npm install @ngrx/store –save
+2. npm install @ngrx/effects –save
+3. npm install @ngrx/store-devtools --save
+
+4. extensão chrome ngrx
+5. https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=pt
