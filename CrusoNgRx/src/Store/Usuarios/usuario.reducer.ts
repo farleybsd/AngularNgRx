@@ -1,5 +1,5 @@
 import { CreatesusuarioFAIL } from './UsuariosActions';
-import { Action, createReducer, on } from '@ngrx/store';
+import { Action, createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 import { UsuarioModel } from './../../app/Models/UsuarioModel';
 import * as fromUsuariosAction from "../Usuarios/UsuariosActions";
 
@@ -63,3 +63,39 @@ export function usuariosReducer(state = initialState, action: Action) {
     return _usuariosReducer(state, action);
 }
 
+//Selector fica ouvindo a mudanca na store 
+//Seletores são funções puras usadas para obter fatias do estado do Store
+
+const getUsuariosFeatureState = createFeatureSelector<UsuarioState>(
+    'usuarios',
+)
+
+export const getUsuarios = createSelector(
+    getUsuariosFeatureState,
+    (state:UsuarioState) => state.usuarios 
+)
+
+export const getUsuario = createSelector(
+    getUsuariosFeatureState,
+    (state:UsuarioState) => state.usuario 
+)
+
+export const getUsuarioErro = createSelector(
+    getUsuariosFeatureState,
+    (state: UsuarioState) => state.error
+)
+
+export const getUsuariosAdministradores = createSelector(
+    getUsuariosFeatureState,
+    (state: UsuarioState) => state.usuarios.filter((filter)=> filter.perfil == 'Administrador')
+)
+
+// export const getUsuariosAdministradoresPorParametro = createSelector(
+//     getUsuariosFeatureState,
+//     (state: UsuarioState, props:{ perfil:string }) => state.usuarios.filter((filter)=> filter.perfil == props.perfil)
+// )
+
+export const getUsuariosIdadeMaiorQue50 = createSelector(
+    getUsuariosFeatureState,
+    (state: UsuarioState) => state.usuarios.filter((filter)=> filter.idade >= 50)
+)
