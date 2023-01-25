@@ -9,6 +9,9 @@ import { createAction, props } from "@ngrx/store";
     de rede e interação direta com as APIs do dispositivo, esses e mais eventos são 
     descritos com ações.
 */
+import { createAction, props } from "@ngrx/store";
+import { UsuarioModel } from "src/app/Models/UsuarioModel";
+
 export const enum usuariosTypeAction {
 
     LOAD_USUARIOS = '[LOAD_USUARIOS] LOAD USUARIOS',
@@ -19,98 +22,100 @@ export const enum usuariosTypeAction {
     LOAD_USUARIO_SUCCESS = '[LOAD_USUARIO_SUCCESS] LOAD USUARIO SUCCESS',
     LOAD_USUARIO_FAIL = '[LOAD_USUARIO_FAIL] LOAD USUARIO FAIL',
 
-    CREATE_USUARIO = '[CREATE_USUARIO_USUARIO] CREATE_USUARIO USUARIO',
-    CREATE_USUARIO_USUARIO_SUCCESS = '[CREATE_USUARIO_USUARIO_SUCCESS] CREATE_USUARIO USUARIO SUCCESS',
-    CREATE_USUARIO_USUARIO_FAIL = '[CREATE_USUARIO_USUARIO_FAIL] CREATE_USUARIO USUARIO FAIL',
+    CREATE_USUARIO = '[CREATE_USUARIO] CREATE USUARIO',
+    CREATE_USUARIO_SUCCESS = '[CREATE_USUARIO_SUCCESS] CREATE USUARIO SUCCESS',
+    CREATE_USUARIO_FAIL = '[CREATE_USUARIO_FAIL] CREATE USUARIO FAIL',
 
-    UPDATE_USUARIO = '[UPDATE_USUARIO_USUARIO] UPDATE_USUARIO USUARIO',
-    UPDATE_USUARIO_USUARIO_SUCCESS = '[UPDATE_USUARIO_USUARIO_SUCCESS] UPDATE_USUARIO USUARIO SUCCESS',
-    UPDATE_USUARIO_USUARIO_FAIL = '[UPDATE_USUARIO_USUARIO_FAIL] UPDATE_USUARIO USUARIO FAIL',
+    UPDATE_USUARIO = '[UPDATE_USUARIO] UPDATE USUARIO',
+    UPDATE_USUARIO_SUCCESS = '[UPDATE_USUARIO_SUCCESS] UPDATE USUARIO SUCCESS',
+    UPDATE_USUARIO_FAIL = '[UPDATE_USUARIO_FAIL] UPDATE USUARIO FAIL',
 
-    DELETE_USUARIO = '[DELETE_USUARIO_USUARIO] DELETE_USUARIO USUARIO',
-    DELETE_USUARIO_USUARIO_SUCCESS = '[DELETE_USUARIO_USUARIO_SUCCESS] DELETE_USUARIO USUARIO SUCCESS',
-    DELETE_USUARIO_USUARIO_FAIL = '[DELETE_USUARIO_USUARIO_FAIL] DELETE_USUARIO USUARIO FAIL'
+    DELETE_USUARIO = '[DELETE_USUARIO] DELETE USUARIO',
+    DELETE_USUARIO_SUCCESS = '[DELETE_USUARIO_SUCCESS] DELETE USUARIO SUCCESS',
+    DELETE_USUARIO_FAIL = '[DELETE_USUARIO_FAIL] DELETE USUARIO FAIL',
 
 }
 
 // Load Usuarios
+
 export const LoadUsuarios = createAction(
     usuariosTypeAction.LOAD_USUARIOS
 );
 
-export const LoadUsuariosSUCCESS = createAction(
+export const LoadUsuariosSuccess = createAction(
     usuariosTypeAction.LOAD_USUARIOS_SUCCESS,
     props<{ payload: UsuarioModel[] }>()
 );
 
-export const LoadUsuariosFAIL = createAction(
+export const LoadUsuariosFail = createAction(
     usuariosTypeAction.LOAD_USUARIOS_FAIL,
     props<{ error: string }>()
 );
 
-// Load Usuario 
+// Load Usuario
+
 export const LoadUsuario = createAction(
     usuariosTypeAction.LOAD_USUARIO,
     props<{ payload: number }>()
 );
 
-export const LoadUsuarioSUCCESS = createAction(
+export const LoadUsuarioSuccess = createAction(
     usuariosTypeAction.LOAD_USUARIO_SUCCESS,
     props<{ payload: UsuarioModel }>()
 );
 
-export const LoadUsuarioFAIL = createAction(
+export const LoadUsuarioFail = createAction(
     usuariosTypeAction.LOAD_USUARIO_FAIL,
     props<{ error: string }>()
 );
 
-// Create Usuario 
+// Create Usuario
 
 export const CreateUsuario = createAction(
     usuariosTypeAction.CREATE_USUARIO,
     props<{ payload: UsuarioModel }>()
 );
 
-export const CreateUsuarioSUCCESS = createAction(
-    usuariosTypeAction.CREATE_USUARIO_USUARIO_SUCCESS,
+export const CreateUsuarioSuccess = createAction(
+    usuariosTypeAction.CREATE_USUARIO_SUCCESS,
     props<{ payload: UsuarioModel }>()
 );
 
-export const CreatesusuarioFAIL = createAction(
-    usuariosTypeAction.CREATE_USUARIO_USUARIO_FAIL,
+export const CreateUsuarioFail = createAction(
+    usuariosTypeAction.CREATE_USUARIO_FAIL,
     props<{ error: string }>()
 );
 
-// Update Usuario 
+// Update Usuario
 
 export const UpdateUsuario = createAction(
     usuariosTypeAction.UPDATE_USUARIO,
     props<{ payload: UsuarioModel }>()
 );
 
-export const UpdateUsuarioSUCCESS = createAction(
-    usuariosTypeAction.UPDATE_USUARIO_USUARIO_SUCCESS,
+export const UpdateUsuarioSuccess = createAction(
+    usuariosTypeAction.UPDATE_USUARIO_SUCCESS,
     props<{ payload: UsuarioModel }>()
 );
 
-export const UpdateusuarioFAIL = createAction(
-    usuariosTypeAction.UPDATE_USUARIO_USUARIO_FAIL,
+export const UpdateUsuarioFail = createAction(
+    usuariosTypeAction.UPDATE_USUARIO_FAIL,
     props<{ error: string }>()
 );
 
-// Delete Usuario 
+// Delete Usuario
 
 export const DeleteUsuario = createAction(
     usuariosTypeAction.DELETE_USUARIO,
     props<{ payload: number }>()
 );
 
-export const DeleteUsuarioSUCCESS = createAction(
-    usuariosTypeAction.DELETE_USUARIO_USUARIO_SUCCESS,
+export const DeleteUsuarioSuccess = createAction(
+    usuariosTypeAction.DELETE_USUARIO_SUCCESS,
     props<{ payload: number }>()
 );
 
-export const DeleteusuarioFAIL = createAction(
-    usuariosTypeAction.DELETE_USUARIO_USUARIO_FAIL,
+export const DeleteUsuarioFail = createAction(
+    usuariosTypeAction.DELETE_USUARIO_FAIL,
     props<{ error: string }>()
 );
