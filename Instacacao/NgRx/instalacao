@@ -1,4 +1,4 @@
-# Instalacao Usar Angular 14.o ou superior
+# Instalacao Usar Angular 14.o ou superior Professor uso a 13
 
 1. npm install @ngrx/store –save
 2. npm install @ngrx/effects –save
