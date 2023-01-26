@@ -8,6 +8,11 @@ import { AppComponent } from './app.component';
 import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.component';
 import { MainComponent } from './main/main.component';
 import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios.component';
+import { StoreModule } from '@ngrx/store';
+import { appEffects, AppReducer } from 'src/Store/app-state';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools/src';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +25,10 @@ import { CadastroUsuariosComponent } from './cadastro-usuarios/cadastro-usuarios
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot(AppReducer), // Import Reduce
+    EffectsModule.forRoot(appEffects), // Import Effects
+    StoreDevtoolsModule.instrument() //Debug Browser
   ],
   providers: [],
   bootstrap: [AppComponent]
