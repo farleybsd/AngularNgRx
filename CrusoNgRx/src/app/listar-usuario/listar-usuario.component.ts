@@ -14,7 +14,8 @@ import { Observable } from 'rxjs/internal/Observable';
 export class ListarUsuarioComponent implements OnInit {
 
   //listaUsuario: UsuarioModel[] = [];
-  listaUsuario$ : Observable<UsuarioModel[]> = this.store.select(fromUsuarioSelector.getUsuarios);
+  listaUsuarios$ : Observable<UsuarioModel[]> = this.store.select(fromUsuarioSelector.getUsuarios);
+  listaUsuario$ : Observable<UsuarioModel | null> = this.store.select(fromUsuarioSelector.getUsuario);
   constructor(
       private store: Store<AppState>
     //private usuarioService: UsuarioService
@@ -28,4 +29,12 @@ export class ListarUsuarioComponent implements OnInit {
     this.store.dispatch(fromUsuarioAction.LoadUsuarios())
   }
 
+  editar(id: number){
+    this.store.dispatch(fromUsuarioAction.LoadUsuario({payload: id}))
+  }
+
+
+  excluir(id: number){
+    this.store.dispatch(fromUsuarioAction.DeleteUsuario({payload: id}))
+  }
 }

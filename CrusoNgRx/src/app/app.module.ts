@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { appEffects, AppReducer } from 'src/Store/app-state';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools/src';
+import { ListaUsuariosAdminComponent } from './lista-usuarios-admin/lista-usuarios-admin.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools/src';
     AppComponent,
     ListarUsuarioComponent,
     MainComponent,
-    CadastroUsuariosComponent
+    CadastroUsuariosComponent,
+    ListaUsuariosAdminComponent
   ],
   imports: [
     BrowserModule,

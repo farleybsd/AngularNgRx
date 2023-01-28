@@ -90,10 +90,10 @@ export const getUsuariosAdministradores = createSelector(
     (state: UsuarioState) => state.usuarios.filter((filter)=> filter.perfil == 'Administrador')
 )
 
-// export const getUsuariosAdministradoresPorParametro = createSelector(
-//     getUsuariosFeatureState,
-//     (state: UsuarioState, props:{ perfil:string }) => state.usuarios.filter((filter)=> filter.perfil == props.perfil)
-// )
+export const getUsuariosAdministradoresPorParametro = createSelector(
+    getUsuariosFeatureState,
+    (state: UsuarioState, props:{ perfil:string }) => state.usuarios.filter((filter)=> filter.perfil == props.perfil) // variavel param front
+)
 
 export const getUsuariosIdadeMaiorQue50 = createSelector(
     getUsuariosFeatureState,

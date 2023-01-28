@@ -1,5 +1,6 @@
 # Intalacao do Ancular CLI Angular -> Setup
-npm install -g @angular/cli
+
+npm install @ngrx/store@12.2.0 --save
 
 # Criando um Projeto
 ng new CrusoNgRx
